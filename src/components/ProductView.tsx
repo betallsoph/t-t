@@ -36,6 +36,26 @@ const ProductView: React.FC = () => {
     fetchProducts();
   }, []);
 
+  const handleDelete = async (productId: string) => {
+    try {
+      const response = await fetch(`https://server-ecom-k24.f4smeraldo.click/products/${productId}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to delete product.');
+      }
+
+      setProducts(products.filter(product => product._id !== productId));
+    } catch (error) {
+        if (error instanceof Error) {
+            setError(error.message);
+        } else {
+            setError('An unknown error occurred while deleting.');
+        }
+    }
+  };
+
   if (loading) {
     return <div className="loading-container"><div className="loader"></div></div>;
   }
@@ -55,6 +75,7 @@ const ProductView: React.FC = () => {
               <h3>{product.name}</h3>
               <p className="product-price">${product.price.toFixed(2)}</p>
               <p className="product-description">{product.description}</p>
+              <button onClick={() => handleDelete(product._id)} className="delete-btn">Delete</button>
             </div>
           </div>
         ))}

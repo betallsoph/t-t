@@ -66,6 +66,22 @@
     color: #666;
     line-height: 1.5;
     flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
 }
 
 /* Loading Spinner */
