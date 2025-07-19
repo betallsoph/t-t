@@ -43,9 +43,14 @@ const ProductView: React.FC = () => {
       });
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ message: 'Failed to parse error response.' }));
-        console.error('Error deleting product:', errorData);
-        throw new Error(errorData.message || 'Failed to delete product.');
+        const errorText = await response.text();
+        console.error('Server error response:', errorText);
+        try {
+          const errorData = JSON.parse(errorText);
+          throw new Error(errorData.message || 'An unknown error occurred.');
+        } catch (e) {
+          throw new Error(errorText || 'Failed to delete product and could not parse error response.');
+        }
       }
 
       setProducts(products.filter(product => product._id !== productId));
