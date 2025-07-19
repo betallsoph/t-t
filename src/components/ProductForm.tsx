@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ProductForm.css';
 
 const ProductForm: React.FC = () => {
@@ -7,6 +8,11 @@ const ProductForm: React.FC = () => {
   const [description, setDescription] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState('');
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/products');
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -85,6 +91,9 @@ const ProductForm: React.FC = () => {
         </div>
         <button type="submit" disabled={submitting}>
             {submitting ? 'Adding...' : 'Add Product'}
+        </button>
+        <button type="button" onClick={handleNavigate} className="view-products-btn">
+          View Products
         </button>
         {feedbackMessage && <p className={`feedback-message ${feedbackMessage.startsWith('Error') ? 'error' : 'success'}`}>{feedbackMessage}</p>}
       </form>

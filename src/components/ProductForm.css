@@ -98,9 +98,22 @@ button:hover {
   box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
 }
 
+.product-form button:hover {
+    background-color: #0056b3;
+}
+
+.view-products-btn {
+    background-color: #28a745;
+    margin-left: 10px;
+}
+
+.view-products-btn:hover {
+    background-color: #218838;
+}
+
 .feedback-message {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 15px;
     padding: 0.75rem;
     border-radius: 5px;
     font-weight: 500;
