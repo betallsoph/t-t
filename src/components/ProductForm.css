@@ -102,9 +102,16 @@ button:hover {
     background-color: #0056b3;
 }
 
+.form-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
 .view-products-btn {
     background-color: #28a745;
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 .view-products-btn:hover {

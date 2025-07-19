@@ -89,12 +89,14 @@ const ProductForm: React.FC = () => {
           ></textarea>
           <label htmlFor="description">Description</label>
         </div>
-        <button type="submit" disabled={submitting}>
-            {submitting ? 'Adding...' : 'Add Product'}
-        </button>
-        <button type="button" onClick={handleNavigate} className="view-products-btn">
-          View Products
-        </button>
+        <div className="form-buttons-container">
+          <button type="submit" disabled={submitting}>
+              {submitting ? 'Adding...' : 'Add Product'}
+          </button>
+          <button type="button" onClick={handleNavigate} className="view-products-btn">
+            View Products
+          </button>
+        </div>
         {feedbackMessage && <p className={`feedback-message ${feedbackMessage.startsWith('Error') ? 'error' : 'success'}`}>{feedbackMessage}</p>}
       </form>
     </div>
