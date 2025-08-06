@@ -20,7 +20,7 @@ const ProductForm: React.FC = () => {
     setFeedbackMessage('');
 
     try {
-      const response = await fetch('http://ananan.click/products', {
+      const response = await fetch('/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
