@@ -3,6 +3,9 @@
     {
       "source": "/api/:path*",
       "destination": "http://ananan.click/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
-}
