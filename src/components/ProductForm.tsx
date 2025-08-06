@@ -20,7 +20,7 @@ const ProductForm: React.FC = () => {
     setFeedbackMessage('');
 
     try {
-      const response = await fetch('https://server-ecom-k24.f4smeraldo.click/products', {
+      const response = await fetch('http://ananan.click/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

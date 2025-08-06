@@ -16,7 +16,7 @@ const ProductView: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://server-ecom-k24.f4smeraldo.click/products');
+        const response = await fetch('http://ananan.click/products');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -38,7 +38,7 @@ const ProductView: React.FC = () => {
 
   const handleDelete = async (productId: string) => {
     try {
-      const response = await fetch(`https://server-ecom-k24.f4smeraldo.click/products/${productId}`, {
+      const response = await fetch(`http://ananan.click/products/${productId}`, {
         method: 'DELETE',
       });
 
